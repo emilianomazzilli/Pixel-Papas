@@ -1,0 +1,186 @@
+/*
+  Media queries for responsive design
+  This CSS file contains media queries to adjust the layout and styles of the webpage
+  based on different screen sizes.
+*/
+
+/* Este "media.css Sirve para adaptar la pantalla a distintos tamaños de pantalla, permitiendo que la pagina funcione en celulares, tablets, pc etc. por el momento no hace una mrd
+pero se intento(por ahora...) */
+
+/* Media query for screens smaller than 768px */
+  @media (max-width: 768px) {
+    body {
+      font-size: 14px;
+    }
+    
+    .container {
+      padding: 10px;
+    }
+    
+    .header {
+      text-align: center;
+    }
+    
+    #games {
+      height: auto; /* Ajusta la altura automáticamente */
+    padding: 1rem;
+  }
+
+  .contenido-juego {
+    flex-direction: column; /* Cambia a disposición vertical */
+    gap: 1rem;
+  }
+
+  .contenedor-juego {
+    width: 90%; /* Reduce el ancho */
+    margin: 1rem auto;
+  }
+
+  .imagen-juego {
+    width: 100%; /* Ajusta al ancho del contenedor */
+    height: auto; /* Mantén la proporción */
+  }
+
+  .descripcion-juego {
+    flex-direction: column; /* Cambia a disposición vertical */
+    text-align: center;
+    gap: 0.5rem;
+  }
+
+  .carousel {
+    width: 100%; /* Ajusta el ancho del carrusel */
+    margin-top: 2rem;
+  }
+
+  .carousel-item {
+    min-width: 100%; /* Cada elemento ocupa todo el ancho */
+  }
+
+  .botones {
+    justify-content: space-between; /* Ajusta los botones */
+    padding: 0 1rem;
+  }
+}
+
+/* Media query for screens smaller than 480px */
+@media (max-width: 480px) {
+  body {
+    font-size: 12px;
+  }
+
+  .header {
+    font-size: 24px;
+  }
+
+  .carousel-item img {
+    width: 100%;
+    height: auto;
+  }
+  
+  #games {
+    padding: 0.5rem;
+  }
+
+  .contenido-juego {
+    gap: 0.5rem;
+  }
+
+  .contenedor-juego {
+    width: 100%; /* Ocupa todo el ancho */
+  }
+
+  .imagen-juego {
+    width: 100%; /* Ajusta al ancho del contenedor */
+    height: auto;
+  }
+
+  .descripcion-juego {
+    font-size: 0.9rem; /* Reduce el tamaño del texto */
+  }
+  
+  .carousel {
+    width: 100%;
+  }
+  
+  .carousel-item {
+    min-width: 100%;
+  }
+
+  .botones {
+    padding: 0;
+  }
+
+  .boton {
+    font-size: 1rem; /* Reduce el tamaño de los botones */
+    padding: 0.3rem 0.5rem;
+  }
+}
+
+/* Media query for screens larger than 1368px */
+@media (min-width: 1024px) {
+  body {
+    font-size: 18px;
+  }
+
+  .header {
+    font-size: 36px;
+  }
+
+  .carousel-item img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+/* Media query for screens larger than 1920px */
+@media (min-width: 1920px) {
+  body {
+    font-size: 20px;
+  }
+
+  .header {
+    font-size: 40px;
+  }
+
+  .carousel-item img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+/* Media query para pantallas mayores a 1368px */
+@media (min-width: 1368px) {
+  #games {
+    height: 120vh; /* Ajusta la altura */
+  }
+
+  .contenido-juego {
+    gap: 2rem; /* Aumenta el espacio entre elementos */
+  }
+
+  .contenedor-juego {
+    width: 40%; /* Aumenta el ancho */
+  }
+
+  .imagen-juego {
+    width: 600px; /* Tamaño más grande */
+    height: 400px;
+  }
+
+  .descripcion-juego {
+    font-size: 1.2rem; /* Aumenta el tamaño del texto */
+  }
+
+  .carousel {
+    width: 80%; /* Ajusta el ancho del carrusel */
+  }
+
+  .carousel-item {
+    min-width: 50%; /* Cada elemento ocupa la mitad del carrusel */
+  }
+
+  .boton {
+    font-size: 1.5rem; /* Botones más grandes */
+    padding: 0.5rem 1rem;
+  }
+}

@@ -1,0 +1,715 @@
+:root {
+  --fuente-title: "Kanit", sans-serif;
+  --fuente-text: "Jaro", sans-serif;
+  --color-title: #ffd878;
+  --brown-dark: #1d1d1e;
+  --orange-bright: #f0c45d;
+  --gray-light: #f3a43d;
+  --peach-soft: rgb(227, 179, 171);
+  --blue-light: rgb(171, 219, 227);
+  --brown-soft: #c5a67d;
+  --red-soft: #b5301d;
+}
+/* Globales */
+* {
+  box-sizing: border-box;
+  margin: 0 auto;
+  padding: 0;
+  scroll-behavior: smooth;
+}
+/* Generales */
+body {
+  height: 100%;
+  background-color: var(--gray-light);
+  overflow-x: hidden;
+}
+h1,
+h2,
+h3 {
+  text-transform: uppercase;
+  text-align: center;
+  font-family: var(--fuente-title);
+}
+h1 {
+  color: var(--orange-bright);
+  text-shadow: var(--brown-dark) 2px 2px 2px;
+}
+h2 {
+  font-size: 2rem;
+  color: var(--red-soft);
+  font-family: var(--fuente-title);
+}
+h4 {
+  font-family: var(--fuente-title);
+  color: var(--color-title);
+  font-size: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+}
+p,
+li {
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-family: var(--fuente-title);
+}
+p {
+  font-size: 1rem;
+  margin: 1rem;
+}
+.p2{
+  font-family: "Bungee Spice", sans-serif;
+}
+.p3{
+  font-family: "kanit", sans-serif;
+  font-size: 1.5rem;
+}
+li {
+  list-style: none;
+  color: var(--brown-dark);
+}
+a {
+  text-decoration: none;
+  color: var(--red-soft);
+}
+span {
+  font-size: 1.34rem;
+  color: var(--red-soft);
+  text-transform: uppercase;
+  font-weight: bold;
+  font-family: var(--fuente-text);
+}
+span:hover {
+  color: var(--orange-bright);
+  text-decoration: var(--orange-bright);
+}
+img {
+  width: 150px;
+  height: 150px;
+  margin: 2rem;
+}
+img:not(.imagen-logo):not(.imagen-promo):not(.img-juego):not(.imagen-juego)
+  :hover {
+  transition: all 0.5s ease-in-out;
+  box-shadow: 6px 6px 15px rgba(0, 0, 0, 0.2);
+  border-radius: 20%;
+  transform: scale(1.5, 1.5);
+}
+/* Contenedores */
+.contenedor {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 3rem;
+  cursor: pointer;
+}
+.contenedor:hover {
+  transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
+  box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.15);
+  border-radius: 10%;
+  transform: scale(1.1);
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.contenedor {
+  animation: fadeIn 1s ease-in-out;
+}
+/* Header  Sinceramente no se que es esto ni pq estaba asi pero por las dudas lo dejo asi jiji*/
+/* header {
+  top: 0;
+  z-index: 1000;
+} */
+/* Navegador */
+nav {
+  width: 100vw;
+  height: 30vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.social-icons,
+.fa-facebook-f,
+.fa-twitter,
+.fa-instagram {
+  color: var(--brown-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  gap: 1rem;
+}
+.title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 20vh;
+  gap: 0.5rem;
+}
+.imagen-logo {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+.nav-links {
+  height: 17vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.3rem;
+  gap: 2rem;
+}
+.nav-links a:hover {
+  color: var(--orange-bright);
+  text-decoration: underline var(--orange-bright);
+}
+
+/* Contenido Comida */
+
+.contenido-comida {
+  width: 100vw;
+  height: 50vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  background-color: var(--gray-light);
+}
+.promo {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.imagen-promo {
+  all: unset;
+  width: 1080px;
+  height: 720px;
+  margin: 2rem;
+}
+
+/* Tooltip */
+
+.tooltip {
+  position: absolute;
+  top: -50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background:#F2C761;
+  color: white;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  z-index: 10;
+  text-align: center;
+  width: 200px;
+}
+
+.tooltip.hidden {
+  display: none;
+}
+
+.tooltip button {
+  margin: 5px 0;
+  padding: 5px 10px;
+  background-color: var(--red-soft);
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.tooltip button:hover {
+  background-color: var(--brown-dark);
+  color: var(--red-soft);
+}
+
+.close-tooltip {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.close-tooltip:hover {
+  color: var(--red-soft);
+}
+
+/* Ícono del carrito */
+.cart-icon {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: var(--orange-bright);
+  color: white;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  z-index: 1000;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.cart-count {
+  font-family: var(--fuente-title);
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background-color: var(--red-soft);
+  color: white;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.8rem;
+}
+
+/* Menú del carrito */
+
+.cart-menu {
+  position: fixed;
+  top: 80px;
+  right: 20px;
+  width: 300px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  padding: 1rem;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.cart-menu.hidden {
+  display: none;
+}
+
+.cart-items {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.cart-items li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.cart-actions {
+  display: flex;
+  justify-content: space-between;
+}
+
+.cart-button {
+  padding: 0.5rem 1rem;
+  background-color: var(--orange-bright);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin: 1rem;
+}
+
+.cart-button:hover {
+  background-color: var(--red-soft);
+}
+
+/* Controles de cantidad del Carrito(+ y -) */
+
+.quantity-controls {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.quantity-controls button {
+  padding: 5px 10px;
+  font-size: 14px;
+  cursor: pointer;
+  background-color: var(--orange-bright);
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+
+.quantity-controls button:hover {
+  background-color: var(--red-soft);
+}
+
+/* boton de "ver mas" en index */
+
+.mas-info {
+  font-family: var(--fuente-text);
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  flex-direction: column;
+  width: 90%;
+  text-transform: uppercase;
+  font-style: italic;
+  font-weight: bold;
+  color: var(--red-soft);
+  text-decoration: underline;
+}
+
+/* Contenido Juego */
+
+#games {
+  width: 100vw;
+  height: 150vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.contenido-juego {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: auto;
+}
+.contenedor-juego {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.imagen-juego {
+  width: 600px;
+  height: 340px;
+  border-radius: 10px;
+  margin: 0 auto;
+  cursor: pointer;
+  margin: 0 auto;
+}
+.imagen-juego:hover {
+  box-shadow: 6px 6px 15px rgba(181, 13, 13, 0.2);
+}
+.descripcion-juego {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--red-soft);
+}
+.juego-hover {
+  position: relative;
+  width: 600px;
+  height: 340px;
+  border-radius: 10px;
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+.video-juego {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.juego-hover:hover .video-juego {
+  opacity: 1;
+}
+
+.juego-hover:hover .imagen-juego {
+  opacity: 0;
+}
+
+/* Carrusel */
+
+.carousel {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  max-width: 1000px;
+  margin: auto;
+  overflow: hidden;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row-reverse;
+  align-items: center;
+  box-shadow: 6px 6px 15px rgba(0, 0, 0, 0.2);
+  background-color: var(--brown-dark);
+  border-radius: 10px;
+  margin: 2rem;
+}
+.main-slide {
+  flex: 1;
+  position: relative;
+}
+.main-slide img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.slide-info {
+  position: absolute;
+  bottom: 10%;
+  left: 5%;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 1em;
+  border-radius: 8px;
+}
+.side-thumbnails {
+  width: 150px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 10px;
+ 
+}
+.side-thumbnails img {
+  width: 100%;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: 0.3s;
+}
+.side-thumbnails img:hover {
+  border-color: #00ffcc;
+}
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 2rem;
+  background: rgba(0,0,0,0.5);
+  color: white;
+  border: none;
+  cursor: pointer;
+  z-index: 10;
+  padding: 10px;
+  border-radius: 50%;
+}
+.left {
+  left: 190px;
+}
+.right {
+  right: 20px;
+}
+
+/* Formulario */
+
+#contacts {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: var(--gray-light);
+}
+.formulario {
+  font-family: "Kanit", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50vw;
+  padding: 2rem;
+  margin: 2rem auto;
+  background-color: var(--orange-bright);
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.formulario h2 {
+  font-size: 2rem;
+  color: var(--red-soft);
+  text-align: center;
+}
+.formulario label {
+  font-size: 1rem;
+  color: var(--red-soft);
+  font-weight: bold;
+}
+.formulario input,
+.formulario textarea,
+.formulario select {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid var(--brown-soft);
+  border-radius: 5px;
+  font-size: 1rem;
+  font-family: var(--fuente-text);
+}
+.formulario input:focus,
+.formulario textarea:focus,
+.formulario select:focus {
+  outline: none;
+  border-color: var(--orange-bright);
+  box-shadow: 0 0 5px var(--orange-bright);
+}
+.formulario button {
+  padding: 0.8rem 1.5rem;
+  background-color: var(--orange-bright);
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+.formulario button:hover {
+  background-color: var(--red-soft);
+}
+
+/* Footer */
+footer {
+  width: 100vw;
+  height: 30vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+footer p {
+  color: var(--red-soft);
+}
+.footer-content {
+  width: 80vw;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-direction: row;
+}
+.footer-title h2 {
+  width: 80vw;
+  text-align: left;
+}
+.footer-bottom {
+  width: 80vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  border-top: 2px solid var(--red-soft);
+}
+
+/* Html producto(pq no existe) no lo usamos mas pero lo dejo por si lo usamos para otra cosa */
+/* HTML PRODUCTO
+.producto {
+  width: 100vw;
+  height: 105vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 2rem;
+}
+.producto img,
+.producto img:hover {
+  all: unset !important;
+  width: 400px !important;
+  height: 400px !important;
+  margin: 2rem !important;
+}
+*/
+
+/* ACA EMPIEZAN LOS OTROS HTML */
+
+/* Producto Juego (no funciona pq cambiamos todo el carrousel)*/
+.juego-detalle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 0 auto;
+}
+.juego-imagenes {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+/* atras de "producto-juego" */
+.atras {
+  margin: 2rem;
+  font-size: 1rem;
+}
+
+ /* catalogo */
+
+#catalogo {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  padding: 20px;
+}
+
+#catalogo .contenedor {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 15px;
+  text-align: center;
+  width: 250px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#catalogo .contenedor img {
+  max-width: 100%;
+  border-radius: 8px;
+}
+
+#catalogo .contenedor h2 {
+  font-size: 1.5em;
+  margin: 10px 0;
+}
+
+#catalogo .contenedor p {
+  margin: 5px 0;
+}
+
+/* boton de atras de catalogo.html */
+.atras {
+  display: inline-block;
+  margin: 20px;
+  text-decoration: none;
+  color: var(--red-soft);
+  font-weight: bold;
+}
+
+.atras:hover {
+  text-decoration: underline;
+}

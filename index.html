@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pixel & Papas</title>
+    <link rel="icon" href="img/Logo.jpeg" type="image/x-icon" />
+    <link rel="stylesheet" href="styles.css" />
+    <!-- <link rel="stylesheet" href="media.css" /> -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Jaro:opsz@6..72&display=swap"
+      rel="stylesheet"
+    />
+    <link href="https://fonts.googleapis.com/css2?family=Bungee+Spice&display=swap" rel="stylesheet">
+  </head>
+
+  <body>
+    <header>
+      <nav>
+        <ul class="nav-links">
+          <!-- <i class="fa-solid fa-bars"></i>  -->
+          <!-- <i class="fa-solid fa-xmark"></i>  -->
+          <li></li>
+          <li></li>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#products">Products</a></li>
+          <a href="#home" class="title">
+            <img class="imagen-logo" src="img/Logo.jpeg" alt="logo empresa" />
+            <span>"Sabores en 8 bits. Jugá y comé sin pausa."</span></a
+          >
+          <li><a href="#games">Games</a></li>
+          <li><a href="#contacts">Contacts</a></li>
+          <li></li>
+        </ul>
+      </nav>
+      <!-- Carrito -->
+      <div id="cart-icon" class="cart-icon">
+        <i class="fas fa-shopping-cart"></i>
+        <span id="cart-count" class="cart-count">0</span>
+      </div>
+      <div id="cart-menu" class="cart-menu hidden">
+        <h3>Tu Carrito</h3>
+        <ul id="cart-items" class="cart-items"></ul>
+        <div class="cart-actions">
+          <button id="pay-button" class="cart-button">Pagar</button>
+          <button id="clear-button" class="cart-button">Quitar Todo</button>
+  
+          <p id="total-price">Total: $0.00</p>
+        </div>
+      </div>
+    </header>
+    <!-- Promo -->
+    <section>
+      <div class="promo">
+        <img id="home" class="imagen-promo" src="img/promoo.PNG" alt="" />
+      </div>
+
+      <!-- Productos -->
+
+      <h4 id="products">Selecciona tu producto</h4>
+      <div class="contenido-comida">
+
+          <!-- MaC PaY -->
+
+        <div class="contenedor food-item" data-name="macpay">
+          <div class="tooltip hidden">
+            <button class="close-tooltip" onclick="closeTooltip()">X</button>
+            <h2 id="tooltipName"></h2>
+            <p class="p2" id="tooltipDescription"></p>
+            <p class="p2" id="tooltipPrice"></p>
+            <button onclick="addToCart('MaC PaY', '$UY 390')">Comprar</button>
+          </div>
+          <img src="img/macpay.png" alt="MaC PaY" onclick="showTooltip(this)">
+          <h2>MaC PaY</h2>
+        </div>
+
+        <!-- Full Jhonny -->
+
+        <div class="contenedor food-item" data-name="fulljhonny">
+          <div class="tooltip hidden">
+            <button class="close-tooltip" onclick="closeTooltip()">X</button>
+            <h2 id="tooltipName"></h2>
+            <p class="p2" id="tooltipDescription"></p>
+            <p class="p2" id="tooltipPrice"></p>
+            <button onclick="addToCart('Full Jhonny', '$UY 470')">Comprar</button>
+          </div>
+          <img src="img/fulljhonny.png" alt="Full Jhonny" onclick="showTooltip(this)">
+          <h2>Full Jhonny</h2>
+        </div>
+
+        <!-- Pizza -->
+         
+        <div class="contenedor food-item" data-name="pizza">
+          <div class="tooltip hidden">
+            <button class="close-tooltip" onclick="closeTooltip()">X</button>
+            <h2 id="tooltipName"></h2>
+            <p class="p2" id="tooltipDescription"></p>
+            <p class="p2" id="tooltipPrice"></p>
+            <button onclick="addToCart('Pizza', '$UY 320')">Comprar</button>
+          </div>
+          <img src="img/pizzaaa.png" alt="pizza" onclick="showTooltip(this)">
+          <h2>Pizza</h2>
+        </div>
+
+        <!-- Pollo Frito -->
+
+        <div class="contenedor food-item" data-name="pollofrito">
+          <div class="tooltip hidden">
+            <button class="close-tooltip" onclick="closeTooltip()">X</button>
+            <h2 id="tooltipName"></h2>
+            <p class="p2" id="tooltipDescription"></p>
+            <p class="p2" id="tooltipPrice"></p>
+            <button onclick="addToCart('Pollo Frito', '$UY 400')">Comprar</button>
+          </div>
+          <img src="img/pollof.png" alt="Pollo Frito" onclick="showTooltip(this)">
+          <h2>Pollo Frito</h2>
+        </div>
+
+        <!-- Napolitana -->
+
+        <div class="contenedor food-item" data-name="milanesa">
+          <div class="tooltip hidden">
+            <button class="close-tooltip" onclick="closeTooltip()">X</button>
+            <h2 id="tooltipName"></h2>
+            <p class="p2" id="tooltipDescription"></p>
+            <p class="p2" id="tooltipPrice"></p>
+            <button onclick="addToCart('Milanesa Napolitana', '$UY 530')">Comprar</button>
+          </div>
+          <img src="img/milanesa.png" alt="Milanesa" onclick="showTooltip(this)">
+          <h2>Napolitana</h2>
+        </div>
+      </div>
+
+      <!-- Catalogo -->
+
+      <div class="catalogo">
+        <a href="catalogo.html" class="mas-info">ver mas > > ></a>
+      </div>
+    </section>
+
+    <!-- Termina Productos/ Juegos -->
+
+    <section id="games">
+      <h4>Selecciona tu juego</h4>
+
+      <!-- GTA V -->
+
+      <div class="contenido-juego">
+        <div class="contenedor-juego">
+          <div class="juego-hover">
+            <img
+              class="imagen-juego"
+              src="img/grand-theft-auto-v.jpg"
+              alt="Grand Theft Auto V"
+            />
+            <video
+              class="video-juego"
+              src="https://gaming-cdn.com/videos/products/4211/800x450/grand-theft-auto-v-enhanced-enhanced-edition-pc-juego-rockstar-preview.webm?v=1657029673"
+              autoplay
+              muted
+              loop
+            ></video>
+          </div>
+          <div class="descripcion-juego">
+            <p class="p3">Grand Theft Auto V</p>
+            <p class="p3">11.89€</p>
+          </div>
+        </div>
+
+        <!-- Assassins creed shadows -->
+         
+        <div class="contenedor-juego">
+          <div class="juego-hover">
+            <img
+              class="imagen-juego"
+              src="img/assassin-s-creed-shadows.jpg"
+              alt="Assassin's Creed Shadows"
+            />
+            <video
+              class="video-juego"
+              src="https://gaming-cdn.com/videos/products/12831/800x450/assassin-s-creed-shadows-pc-juego-ubisoft-connect-preview.webm?v=173766976"
+              autoplay
+              muted
+              loop
+            ></video>
+          </div>
+          <div class="descripcion-juego">
+            <p class="p3">Assassin's Creed Shadows</p>
+            <p class="p3">48.49€</p>
+          </div>
+        </div>
+
+        <!-- God Of War -->
+
+        <div class="contenedor-juego">
+          <div class="juego-hover">
+            <img
+              class="imagen-juego"
+              src="img/god-of-war-pc.jpg"
+              alt="God Of War"
+            />
+            <video
+              class="video-juego"
+              src="https://gaming-cdn.com/videos/products/17355/800x450/god-of-war-pc-juego-steam-latin-america-preview.webm?v=1723200904"
+              autoplay
+              muted
+              loop
+            ></video>
+          </div>
+          <div class="descripcion-juego">
+            <p class="p3">God Of War</p>
+            <p class="p3">11.36€</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Carrusel -->
+
+      <div class="carousel">
+        <div class="main-slide" id="mainSlide">
+          <img src="img/cs2.jpeg" alt="Main Slide" id="mainImage" />
+          <div class="slide-info">
+            <h2 id="slideTitle">Ready or Not</h2>
+            <p>Now Available -50%</p>
+          </div>
+        </div>
+        <div class="side-thumbnails" id="thumbnails"></div>
+        <button class="arrow left" onclick="prevSlide()">&#10094;</button>
+        <button class="arrow right" onclick="nextSlide()">&#10095;</button>
+      </div>
+    </section>
+
+    <!-- Termina Juegos/ Contactos -->
+
+    <section id="contacts">
+      <form class="formulario" action="">
+        <h2>Contact Us</h2>
+        <label for="nombre">Nombre:</label>
+        <input
+          type="text"
+          id="nombre"
+          name="nombre"
+          placeholder="Ingresa tu nombre"
+          required
+        />
+
+        <label for="email">Correo Electrónico:</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          placeholder="Ingresa tu correo electrónico"
+          required
+        />
+
+        <label for="mensaje">Mensaje:</label>
+        <textarea
+          id="mensaje"
+          name="mensaje"
+          rows="4"
+          placeholder="Escribe tu mensaje aquí"
+          required
+        ></textarea>
+
+        <button type="submit">Enviar</button>
+      </form>
+    </section>
+
+    <!-- Termina Contactos/ Footer -->
+
+    <footer>
+      <div class="footer-title">
+        <h2>Pixel & Papas</h2>
+      </div>
+      <div class="footer-content">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+      </div>
+      <div class="footer-bottom" class="social-icons">
+        <p>TM © 2025 Pixel&Papas Corporation. Todos los derechos reservados.</p>
+        <a href="https://www.instagram.com/pixelypapas/" target="_blank"
+          ><i class="fab fa-instagram"></i
+        ></a>
+        <a href="https://x.com/PixelyPapas" target="_blank"
+          ><i class="fab fa-twitter"></i
+        ></a>
+        <a
+          href="https://www.facebook.com/profile.php?id=61575319850908"
+          target="_blank"
+          ><i class="fab fa-facebook-f"></i
+        ></a>
+      </div>
+    </footer>
+
+    <!-- JavaScript -->
+     
+    <script src="script.js"></script>
+  </body>
+</html>

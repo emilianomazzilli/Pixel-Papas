@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+  <!-- Actualmente esto esta sin usar hasta que arreglemos toda la parte de juegos -->
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pixel & Papas</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="media.css" />
+  <link rel="icon" href="img/Logo.jpeg" type="image/x-icon" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+</head>
+<body>
+  <nav class="atras">
+    <ul>
+      <li><a href="index.html">Atrás</a></li>
+    </ul>
+    <!-- Carrito -->
+    <div id="cart-icon" class="cart-icon">
+      <i class="fas fa-shopping-cart"></i>
+      <span id="cart-count" class="cart-count">0</span>
+    </div>
+    <div id="cart-menu" class="cart-menu hidden">
+      <h3>Tu Carrito</h3>
+      <ul id="cart-items" class="cart-items"></ul>
+      <div class="cart-actions">
+        <button id="pay-button" class="cart-button">Pagar</button>
+        <button id="clear-button" class="cart-button">Quitar Todo</button>
+      </div>
+    </div>
+  </nav>
+  <!-- Detalles del juego -->
+    <section class="juego-detalle">
+        <h1 id="juego-nombre"></h1>
+        <div class="juego-imagenes">
+            <img id="juego-img" src="" alt="Imagen principal del juego">
+            <img id="juego-img2" src="" alt="Imagen secundaria del juego" style="display:none;">
+        </div>
+            <div id="juego-video"></div>
+        <p id="juego-descripcion"></p>
+        <h3 id="juego-precio"></h3>
+    </section>
+    <!-- El Footer facherito -->
+    <footer>
+        <div class="footer-title">
+          <h2>Pixel & Papas</h2>
+        </div>
+        <div class="footer-content">
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          </p>
+        </div>
+        <div class="footer-bottom" class="social-icons">
+          <p>TM © 2025 Pixel&Papas Corporation. Todos los derechos reservados.</p>
+          <a href="https://www.instagram.com/pixelypapas/" target="_blank"><i class="fab fa-instagram"></i></a>
+          <a href="https://x.com/PixelyPapas" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.facebook.com/profile.php?id=61575319850908" target="_blank"><i class="fab fa-facebook-f"></i></a>
+        </div>
+      </footer>
+  <script src="script.js"></script>
+</body>
+</html>
